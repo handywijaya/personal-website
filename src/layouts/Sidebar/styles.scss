@@ -1,0 +1,73 @@
+.Sidebar {
+  &-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &-subtitle {
+    font-weight: bold;
+  }
+
+  &-profpic {
+    display: flex;
+
+    &-img {
+      width: 120px;
+      margin-right: 10px;
+    }
+
+    &-name {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-mail {
+    line-height: 2;
+
+    &-content {
+      display: flex;
+      position: relative;
+
+      &-email {
+        cursor: pointer;
+        margin-left: 10px;
+      }
+    }
+
+    &-copied {
+      background-color: #fff;
+    }
+
+    &-ic {
+      &-gmail {
+        width: 20px;
+      }
+    }
+  }
+
+  &-socmed {
+    line-height: 2;
+    
+    & > img {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    &-ic {
+      &-fb {
+        width: 20px;
+      }
+
+      &-ig {
+        width: 20px;
+      }
+    }
+  }
+}
+
+.Sidebar > div {
+  margin-bottom: 10px;
+}

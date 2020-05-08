@@ -1,0 +1,41 @@
+@import '../../basic.scss';
+
+.Balloon {
+  opacity: 0;
+
+  // main text position
+  position: absolute;
+  right: -13px;
+  top: 0;
+  transform: translateX(100%);
+  transition: .4s all ease;
+  
+  // for left triangle purposes
+  height: 32px;
+  box-sizing: border-box;
+  display: flex;
+
+  &-triangle {
+    width: 0px;
+    height: 0px;
+    border-top: 16px solid transparent;
+    border-right: 16px solid darken($light-blue-1, 5%);
+    border-bottom: 16px solid transparent;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: -13px;
+  }
+
+  &-text {
+    border-radius: 5px;
+    background-color: darken($light-blue-1, 5%);
+    color: $dark-blue-0;
+    padding: 0 6px;
+  }
+
+  &-showed {
+    opacity: 1;
+  }
+}
