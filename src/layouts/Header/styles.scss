@@ -6,19 +6,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid $dark-blue-0;
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  // box-shadow: 0px -10px 15px 5px white;
   box-sizing: border-box;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
+  // z-index: 100;
 
   &-title {
     font-size: 36px;
     font-weight: bold;
-    color: $dark-blue-0;
+    color: white;
   }
 
   &-subtitle {
     font-size: 18px;
-    font-weight: bold;
-    color: lighten($dark-blue-0, 60%);
+    color: white;
     text-align: center;
   }
 

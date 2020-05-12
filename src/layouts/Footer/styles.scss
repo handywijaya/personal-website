@@ -1,0 +1,46 @@
+@import '../../basic.scss';
+
+.Footer {
+  box-sizing: border-box;
+  color: white;
+  padding: 20px;
+
+  &-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-copyright {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  &-profpic {
+    text-align: center;
+    &-img {
+      width: 100px;
+    }
+  }
+
+  &-contacts {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &-linebreak {
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0px 0px 12px 0px white;
+      margin: 10px 0;
+    }
+
+    &-ic {
+      & > img {
+        width: 20px;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
