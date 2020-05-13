@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.scss'
 
-import Balloon from '../../components/Balloon'
+import Balloon from './balloon'
 
 import profile from './profile.jpg'
 import gmail from './gmail.svg'
@@ -130,6 +130,7 @@ class Footer extends React.Component<{}, State> {
               <img className="Footer-contacts-ic-linkedIn" src={linkedIn} alt="linkedIn" onClick={this._openLinkedIn}/>
               <img className="Footer-contacts-ic-fb" src={facebook} alt="facebook" onClick={this._openFb} />
               <img className="Footer-contacts-ic-ig" src={instagram} alt="instagram" onClick={this._openIg} />
+              <Balloon shown={copyBalloon.shown} text={copyBalloon.text} />
             </div>
           </div>
         </div>

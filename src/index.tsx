@@ -8,7 +8,7 @@ import {
 import './index.css'
 import * as serviceWorker from './serviceWorker'
 import Layout from './layouts/Layout'
-import App from './pages/App'
+import Home from './pages/Home'
 import HelloWorld from './pages/HelloWorld'
 import NotFound from './pages/NotFound'
 import Login from './pages/Login'
@@ -21,7 +21,7 @@ ReactDOM.render(
         <Route path="/">
           <Layout>
             <Switch>
-              <Route exact path="/" component={App} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/hello-world" component={HelloWorld} />
               <Route path="/hello-world/:name" component={HelloWorld} />
               <Route strict component={NotFound} />
