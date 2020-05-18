@@ -21,6 +21,41 @@ class Home extends React.Component {
     this.quotes = []
     
     this.quotes.push({
+      date: 'May 15th, 2020',
+      quote: 'Imagine talking with someone with soothing words, warming.',
+      author: 'Handy Wijaya'
+    })
+    this.quotes.push({
+      date: 'May 15th, 2020',
+      quote: 'The way to talk, is worth to be mastered.',
+      author: 'Handy Wijaya'
+    })
+    this.quotes.push({
+      date: 'May 15th, 2020',
+      quote: 'A day without sun, maybe its just one of someone\'s darkest day.',
+      author: 'Handy Wijaya'
+    })
+    this.quotes.push({
+      date: 'May 15th, 2020',
+      quote: 'Mood is something you have to be taken seriously.',
+      author: 'Handy Wijaya'
+    })
+    this.quotes.push({
+      date: 'May 15th, 2020',
+      quote: 'Am I wrong to try to re-establish a broken bridge with old acquaintances?',
+      author: 'Handy Wijaya'
+    })
+    this.quotes.push({
+      date: 'May 15th, 2020',
+      quote: 'Resting is not always slacking, right?',
+      author: 'Handy Wijaya'
+    })
+    this.quotes.push({
+      date: 'May 14th, 2020',
+      quote: 'I was curious if turtle can jump.',
+      author: 'Handy Wijaya'
+    })
+    this.quotes.push({
       date: 'May 13th, 2020',
       quote: 'A very warm hug beats a thanks.',
       author: 'Handy Wijaya'
@@ -48,7 +83,7 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <div className="Home-disclaimer">
-          Disclaimer:<br />You may find some quotes here, some are inspirational, some are just random, whether you like it or not. Brace yourself if you decided to scroll down.
+          Disclaimer:<br />You may find some quotes here, some are inspirational, some are just random, whether you like it or not. Brace yourself if you decide to scroll down.
         </div>
         <div className="Home-content">
           {
