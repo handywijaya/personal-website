@@ -18,58 +18,37 @@ class Home extends React.Component {
   }
 
   initQuotes () {
+    const data = [
+      'May 19th, 2020;Being good is barely enough.;Handy Wijaya',
+      'May 18th, 2020;Roses are flower too. Beauty.. in their way.;Handy Wijaya',
+      'May 17th, 2020;Internet has become one of my primary. Is it too far already?;Handy Wijaya',
+      'May 16th, 2020;God is great. No doubt;Handy Wijaya',
+      'May 15th, 2020;Imagine talking with someone with soothing words, warming.. right?;Handy Wijaya',
+      'May 15th, 2020;The way to talk, is worth to be mastered.;Handy Wijaya',
+      'May 15th, 2020;A day without sun, maybe its just one of someone\'s darkest day.;Handy Wijaya',
+      'May 15th, 2020;Mood is something you have to be taken seriously.;Handy Wijaya',
+      'May 15th, 2020;As hard it may seem, keep on fighting. The rainbow comes after the thunderstorm.;Handy Wijaya',
+      'May 15th, 2020;Resting is not always slacking.;Handy Wijaya',
+      'May 14th, 2020;I was curious if turtle can jump.;Handy Wijaya',
+      'May 13th, 2020;A very warm hug beats a thanks.;Handy Wijaya',
+      'May 13th, 2020;Who needs quotes nowadays? Well, who cares, I will still do it.;Handy Wijaya'
+    ]
+
     this.quotes = []
-    
-    this.quotes.push({
-      date: 'May 15th, 2020',
-      quote: 'Imagine talking with someone with soothing words, warming.',
-      author: 'Handy Wijaya'
-    })
-    this.quotes.push({
-      date: 'May 15th, 2020',
-      quote: 'The way to talk, is worth to be mastered.',
-      author: 'Handy Wijaya'
-    })
-    this.quotes.push({
-      date: 'May 15th, 2020',
-      quote: 'A day without sun, maybe its just one of someone\'s darkest day.',
-      author: 'Handy Wijaya'
-    })
-    this.quotes.push({
-      date: 'May 15th, 2020',
-      quote: 'Mood is something you have to be taken seriously.',
-      author: 'Handy Wijaya'
-    })
-    this.quotes.push({
-      date: 'May 15th, 2020',
-      quote: 'Am I wrong to try to re-establish a broken bridge with old acquaintances?',
-      author: 'Handy Wijaya'
-    })
-    this.quotes.push({
-      date: 'May 15th, 2020',
-      quote: 'Resting is not always slacking, right?',
-      author: 'Handy Wijaya'
-    })
-    this.quotes.push({
-      date: 'May 14th, 2020',
-      quote: 'I was curious if turtle can jump.',
-      author: 'Handy Wijaya'
-    })
-    this.quotes.push({
-      date: 'May 13th, 2020',
-      quote: 'A very warm hug beats a thanks.',
-      author: 'Handy Wijaya'
-    })
-    this.quotes.push({
-      date: 'May 13th, 2020',
-      quote: 'Who needs quotes nowadays? Well, who cares, I will still do it.',
-      author: 'Handy Wijaya'
+    data.forEach((d) => {
+      const splitted = d.split(';')
+
+      this.quotes.push({
+        date: splitted[0],
+        quote: splitted[1],
+        author: splitted[2]
+      })
     })
   }
 
-  renderQuote (quote: Quote) {
+  renderQuote (quote: Quote, index: number) {
     return (
-      <div className="Home-content-quote">
+      <div key={index} className="Home-content-quote">
         <div className="Home-content-quote-date">
           {quote.date}
         </div>
@@ -87,8 +66,8 @@ class Home extends React.Component {
         </div>
         <div className="Home-content">
           {
-            this.quotes.map((quote) => {
-              return this.renderQuote(quote)
+            this.quotes.map((quote, i) => {
+              return this.renderQuote(quote, i)
             })
           }
         </div>
