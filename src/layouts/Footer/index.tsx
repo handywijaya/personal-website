@@ -124,6 +124,7 @@ class Footer extends React.Component<{}, State> {
           </div>
           <div className="Footer-contacts">
             <div className="Footer-contacts-name">Handy Wijaya</div>
+            <div className="Footer-contacts-caption">Traveling is my passion. Sports is my nutrient.</div>
             <div className="Footer-contacts-linebreak" />
             <div className="Footer-contacts-ic">
               <img className="Footer-contacts-ic-gmail" src={gmail} alt="gmail" onMouseOver={this._hoverEmail} onMouseLeave={this._hoverEmailLeave} onClick={this._copyEmail}/>

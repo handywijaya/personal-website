@@ -1,31 +1,44 @@
-@import '../../basic.scss';
-
 .Home {
   padding: 10px;
-  color: $text-dark-blue;
-  line-height: 1.5;
 
-  &-disclaimer {
-    font-weight: bold;
-  }
+  &-adventure {
+    line-height: 1.5;
 
-  &-content {
-    margin-top: 20px;
+    &-title {
+      font-weight: bold;
+    }
 
-    &-quote {
-      margin-bottom: 20px;
-      
-      &-date {
-        font-style: italic;
+    &-caption {
+      font-style: italic;
+    }
+
+    &-collections {
+      margin-top: 10px;
+      display: flex;
+
+      &-frame {
+        border: 3px solid #ccc;
+        background: #eee;
+        padding: 5px 5px;
+        margin-right: 5px;
+
+        &-image {
+          width: 250px;
+        }
       }
 
-      &-q {
-        margin-left: 30px;
-      }
+      &-more {
+        display: flex;
+        align-items: center;
 
-      &-author {
-        font-style: italic;
-        font-weight: 100;
+        &-text {
+          font-style: italic;
+          cursor: pointer;
+        }
+
+        &-text:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
