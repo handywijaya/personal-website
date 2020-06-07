@@ -1,29 +1,90 @@
 import React from 'react'
 import './styles.scss'
 
-import luxBali1 from './lux-bali-1.jpg'
-import luxBali2 from './lux-bali-2.jpg'
+interface Collection {
+  title: string
+  caption: string
+  collectionName: string
+  imgNames: Array<string>,
+  imgExtension: string
+}
 
 class Home extends React.PureComponent {
+  collections: Array<Collection>
+
+  constructor (props: any) {
+    super(props)
+
+    this.collections = []
+    this.openImage = this.openImage.bind(this)
+
+    this.initCollections()
+  }
+
+  initCollections () {
+    this.collections = []
+    this.collections.push({
+      title: 'Luxury Bali - 2019',
+      caption: 'Traveling with my brother has never gone this far!',
+      collectionName: 'luxury-bali',
+      imgNames: ['lux-bali-1', 'lux-bali-2'],
+      imgExtension: 'jpg'
+    })
+  }
+
+  openImage (collectionName: string, imgName: string) {
+    window.open('/assets/' + collectionName + '/' + imgName, '_blank')
+  }
+
+  getOriginalImageName (imgName: string, imgExtension: string) {
+    return imgName + '.' + imgExtension
+  }
+
+  getPreviewImageName (imgName: string, imgExtension: string) {
+    return imgName + '-prev.' + imgExtension
+  }
+
+  renderAlbum (collectionName: string, imgNames: Array<string>, imgExtension: string) {
+    return (
+      <div className="Home-adventure-album">
+        {
+          imgNames.map((imgName, i) => {
+            return (
+              <div key={i} className="Home-adventure-album-frame" onClick={() => {this.openImage(collectionName, this.getOriginalImageName(imgName, imgExtension))}}>
+                <img src={"/assets/" + collectionName + "/" + this.getPreviewImageName(imgName, imgExtension)} className="Home-adventure-album-frame-image" alt={imgName} title="click to preview original picture" />
+              </div>
+            )
+          })
+        }
+        <div className="Home-adventure-album-more">
+          <div className="Home-adventure-album-more-text" title="work in progress :p">
+            Check 'em all..
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  renderCollection (collection: Collection, key: number) {
+    return (
+      <div key={key} className="Home-adventure-collection">
+        <div className="Home-adventure-title">{collection.title}</div>
+        <div className="Home-adventure-caption">{collection.caption}</div>
+        {
+          this.renderAlbum(collection.collectionName, collection.imgNames, collection.imgExtension)
+        }
+      </div>
+    )
+  }
+
   render () {
     return(
       <div className="Home">
         <div className="Home-adventure">
-          <div className="Home-adventure-title">Luxury Bali - 2019</div>
-          <div className="Home-adventure-caption">Traveling with my brother has never gone this far!</div>
-          <div className="Home-adventure-collections">
-            <div className="Home-adventure-collections-frame">
-              <img src={luxBali1} className="Home-adventure-collections-frame-image" alt="luxury-bali-1" />
-            </div>
-            <div className="Home-adventure-collections-frame">
-              <img src={luxBali2} className="Home-adventure-collections-frame-image" alt="luxury-bali-2" />
-            </div>
-            <div className="Home-adventure-collections-more">
-              <div className="Home-adventure-collections-more-text" title="work in progress :p">
-                Check our collections..
-              </div>
-            </div>
-          </div>
+          {
+            this.collections.map((c, i) => this.renderCollection(c, i))
+          }
+          
         </div>
         
       </div>
