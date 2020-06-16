@@ -20,8 +20,8 @@
         border: 3px solid #ccc;
         background: #eee;
         padding: 5px 5px 0 5px;
-        margin-right: 5px;
         cursor: pointer;
+        width: 250px;
 
         &-image {
           width: 250px;
@@ -30,6 +30,7 @@
 
       &-more {
         display: flex;
+        justify-content: center;
         align-items: center;
 
         &-text {
@@ -39,6 +40,31 @@
 
         &-text:hover {
           text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 634px) {
+  .Home-adventure-album-frame {
+    margin-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 634px) {
+  .Home {
+    margin: 0 auto;
+
+    &-adventure {
+    text-align: center;
+
+      &-album {
+        display: inline;
+
+        &-frame {
+          margin: auto;
+          margin-bottom: 5px;
         }
       }
     }

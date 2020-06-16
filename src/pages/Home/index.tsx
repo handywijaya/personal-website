@@ -58,7 +58,7 @@ class Home extends React.PureComponent {
         }
         <div className="Home-adventure-album-more">
           <div className="Home-adventure-album-more-text" title="work in progress :p">
-            Check 'em all..
+            Full collection..
           </div>
         </div>
       </div>
