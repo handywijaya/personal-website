@@ -9,7 +9,7 @@ class Header extends React.PureComponent {
                     Welcome! <span className="Header-snowflake">&#10052;</span>
                 </div>
                 <div className="Header-subtitle">
-                    This site is a handicraft of a developer who loves one of Disney Movie.<br />Can you guess the movie? <span>&#129488;</span>
+                    This site is a handicraft of a developer who falls to one of Disney Movie.<br />Can you guess the movie? <span>&#129488;</span>
                 </div>
             </div>
         )
