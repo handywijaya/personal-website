@@ -3,9 +3,20 @@ export interface Collections {
 }
 
 export interface Collection {
+  id: string
   title: string
   caption: string
-  collectionName: string
-  imgNames: Array<string>,
-  imgExtension: string
+  images: Array<CollectionImage>
+}
+
+export interface CollectionImage {
+  title: string
+  url: string
+  previewUrl: string
+  type: CollectionImageType
+}
+
+export enum CollectionImageType {
+  LANDSCAPE,
+  PORTRAIT
 }

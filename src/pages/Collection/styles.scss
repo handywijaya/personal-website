@@ -1,6 +1,26 @@
 .Collection {
   padding: 10px;
   line-height: 1.5;
+
+  &-link {
+    cursor: pointer;
+    font-style: italic;
+    user-select: none;
+  }
+  
+  &-link:hover {
+    text-decoration: underline;
+  }
+
+  &-home {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  &-top {
+    margin-top: 10px;
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 634px) {

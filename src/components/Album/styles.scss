@@ -9,17 +9,23 @@
 
   &-pages {
     margin-top: 10px;
-    display: flex;
+    position: relative;
 
-    &-frame {
-      border: 3px solid #ccc;
-      background: #eee;
-      padding: 5px 5px 0 5px;
-      cursor: pointer;
-      width: 250px;
+    &-row {
+      display: flex;
+      text-align: center;
+      margin-top: 7px;
 
-      &-image {
+      &-frame {
+        border: 3px solid #ccc;
+        background: #eee;
+        padding: 5px;
         width: 250px;
+
+        &-caption {
+          font-size: 12px;
+          font-weight: bold;
+        }
       }
     }
 
@@ -40,19 +46,51 @@
   }
 }
 
+.Image {
+  cursor: pointer;
+  
+  &-landscape {
+    width: 250px;
+    height: auto;
+  }
+
+  &-portrait {
+    height: 250px;
+    width: auto;
+    margin: auto;
+  }
+}
+
 @media only screen and (min-width: 634px) {
-  .Album-pages-frame {
-    margin-right: 5px;
+  .Album-pages {
+    &-row-frame {
+      margin-right: 5px;
+    }
+
+    &-more {
+      position: absolute;
+      right: 0;
+      top: 62px;
+      transform: translateX(100%);
+    }
   }
 }
 
 @media only screen and (max-width: 634px) {
   .Album-pages {
-    display: inline;
+    &-row {
+      display: inline;
 
-    &-frame {
-      margin: auto;
-      margin-bottom: 5px;
+      &-frame {
+        margin: auto;
+        margin-bottom: 5px;
+      }
+    }
+
+    &-more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

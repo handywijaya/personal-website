@@ -1,6 +1,8 @@
 import React from 'react'
 import './styles.scss'
 
+import cn from 'classnames'
+
 import { Collection as C } from '../../interfaces/Collections'
 
 import Constant from '../../utils/const'
@@ -25,12 +27,23 @@ class Collection extends React.PureComponent<any> {
       history.goBack()
     }
   }
+
+  backToHome () {
+    const { history } = this.props
+    history.push('/')
+  }
+
+  backToTop () {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0;
+  }
   
   render () {
     return (
       <div className="Collection">
-        <Album
-          collection={this.collection} />
+        <div className={cn("Collection-link", "Collection-home")} onClick={() => this.backToHome()}>Back to home</div>
+        <Album collection={this.collection} />
+        <div className={cn("Collection-link", "Collection-top")} onClick={() => this.backToTop()}>Back to top</div>
       </div>
     )
   }
