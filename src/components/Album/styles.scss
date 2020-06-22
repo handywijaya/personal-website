@@ -21,6 +21,7 @@
         background: #eee;
         padding: 5px;
         width: 250px;
+        min-height: 160px;
 
         &-caption {
           font-size: 12px;
@@ -70,7 +71,7 @@
     &-more {
       position: absolute;
       right: 0;
-      top: 62px;
+      top: 70px;
       transform: translateX(100%);
     }
   }

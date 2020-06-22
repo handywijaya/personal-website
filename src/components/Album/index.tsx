@@ -38,7 +38,7 @@ class Album extends React.PureComponent<Props> {
           <img src={image.previewUrl}
             className={cn("Image", image.type === CollectionImageType.LANDSCAPE ? "Image-landscape" : "Image-portrait")}
             alt={alt}
-            title="click to preview original picture"
+            title={image.caption}
             onClick={() => {this.openImage(image.url)}} />
           <div className="Album-pages-row-frame-caption">{image.title}</div>
         </div>
@@ -55,9 +55,7 @@ class Album extends React.PureComponent<Props> {
     const maxImagePerRow = isPreview ? 2 : 3
     // 7 total image with 3 maxImagePerRow will have 2.333 totalRows
     const totalRows = isPreview ? 1 : collection.images.length / maxImagePerRow
-    console.log('totalRows', totalRows)
     for (let i = 0; i < totalRows; i++) {
-      console.log('for loop ', i)
       elements.push(
         <div key={i} className="Album-pages-row">
           {

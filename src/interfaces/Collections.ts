@@ -11,6 +11,7 @@ export interface Collection {
 
 export interface CollectionImage {
   title: string
+  caption: string
   url: string
   previewUrl: string
   type: CollectionImageType
