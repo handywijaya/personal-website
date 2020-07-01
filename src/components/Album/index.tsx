@@ -25,6 +25,19 @@ class Album extends React.PureComponent<Props> {
     window.open(imageUrl, '_blank')
   }
 
+  getFrameElement (key: number, url: string, previewUrl: string, caption: string, title: string, imageType: CollectionImageType, alt: string) {
+    return (
+      <div key={key} className="Album-pages-row-frame">
+        <img src={previewUrl}
+          className={cn("Image", imageType === CollectionImageType.LANDSCAPE ? "Image-landscape" : "Image-portrait")}
+          alt={alt}
+          title={caption}
+          onClick={() => {this.openImage(url)}} />
+        <div className="Album-pages-row-frame-caption">{title}</div>
+      </div>
+    )
+  }
+
   renderFrames(collectionId: string, images: Array<CollectionImage>, maxImagePerRow: number, rowNumber: number) {
     let elements:Array<any> = []
 
@@ -33,17 +46,21 @@ class Album extends React.PureComponent<Props> {
       const image = images[i]
       const alt = collectionId + "-" + (i+1)
 
-      elements.push(
-        <div key={i} className="Album-pages-row-frame">
-          <img src={image.previewUrl}
-            className={cn("Image", image.type === CollectionImageType.LANDSCAPE ? "Image-landscape" : "Image-portrait")}
-            alt={alt}
-            title={image.caption}
-            onClick={() => {this.openImage(image.url)}} />
-          <div className="Album-pages-row-frame-caption">{image.title}</div>
-        </div>
-      )
+      elements.push(this.getFrameElement(i, image.url, image.previewUrl, image.caption, image.title, image.type, alt))
     }
+
+    return elements
+  }
+
+  renderPreviewFrames (collection: Collection) {
+    let elements:Array<any> = []
+
+    collection.previewImageIdx.forEach((idx, i) => {
+      const image = collection.images[idx]
+      const alt = collection.id + "-" + (i+1)
+
+      elements.push(this.getFrameElement(i, image.url, image.previewUrl, image.caption, image.title, image.type, alt))
+    })
 
     return elements
   }
@@ -51,6 +68,16 @@ class Album extends React.PureComponent<Props> {
   renderFrameRows (collection: Collection) {
     const { isPreview } = this.props
     let elements:Array<any> = []
+
+    if (isPreview) {
+      return (
+        <div className="Album-pages-row">
+          {
+            this.renderPreviewFrames(collection)
+          }
+        </div>
+      )
+    }
 
     const maxImagePerRow = isPreview ? 2 : 3
     // 7 total image with 3 maxImagePerRow will have 2.333 totalRows

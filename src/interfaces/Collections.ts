@@ -6,6 +6,7 @@ export interface Collection {
   id: string
   title: string
   caption: string
+  previewImageIdx: Array<number>
   images: Array<CollectionImage>
 }
 
