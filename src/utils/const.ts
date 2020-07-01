@@ -6,6 +6,7 @@ class Constant {
       id: 'luxury-bali',
       title: 'Luxury Bali - 2019',
       caption: 'Exploring the luxuriousness of Bali!',
+      popupColor: '#dcf3f3', // see basic.scss
       previewImageIdx: [1, 2],
       images: [
         {
@@ -69,6 +70,7 @@ class Constant {
       id: 'spring-japan-2018',
       title: 'Spring Japan - 2018',
       caption: 'Traveling with my brother has never gone this far! Sakura, we are coming!!!',
+      popupColor: '#fddfe3', // see basic.scss
       previewImageIdx: [4, 31],
       images: [
         {

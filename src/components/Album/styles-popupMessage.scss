@@ -1,0 +1,17 @@
+.PopupMessage {
+  position: fixed;
+  border-radius: 7px;
+  pointer-events: none;
+  user-select: none;
+  background: white;
+  padding: 5px;
+  transition: 0.125s all ease;
+
+  &-showed {
+    opacity: 1;
+  }
+
+  &-hidden {
+    opacity: 0;
+  }
+}

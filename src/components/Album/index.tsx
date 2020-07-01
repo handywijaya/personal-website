@@ -4,16 +4,35 @@ import cn from 'classnames'
 
 import { Collection, CollectionImage, CollectionImageType } from '../../interfaces/Collections'
 
+import PopupMessage from './popupMessage'
+
 interface Props {
   collection: Collection
   onOpenCollection: (collectionPath: string) => void
   isPreview: boolean
 }
 
-class Album extends React.PureComponent<Props> {
+class Album extends React.Component<Props, any> {
   public static defaultProps = {
       onOpenCollection: () => {},
       isPreview: false
+  }
+  popupTimeout?: NodeJS.Timeout
+
+  constructor (props:any) {
+    super(props)
+
+    this.state = {
+      popup: {
+        frameId: '',
+        show: false,
+        caption: '',
+        x: 0,
+        y: 0,
+        bgColor: 'white'
+      }
+    }
+    this.popupTimeout = undefined
   }
 
   openCollection (collectionId: string) {
@@ -25,20 +44,67 @@ class Album extends React.PureComponent<Props> {
     window.open(imageUrl, '_blank')
   }
 
-  getFrameElement (key: number, collectionId: string, url: string, previewUrl: string, caption: string, title: string, imageType: CollectionImageType, alt: string) {
+  showPopup (caption: string, frameId: string, x: number, y: number, bgColor: string) {
+    let { popup } = this.state
+    popup.show = true
+    popup.caption = caption
+    popup.frameId = frameId
+    popup.x = x
+    popup.y = y
+    popup.bgColor = bgColor
+    this.setState({ popup })
+  }
+
+  hidePopup () {
+    let { popup } = this.state
+    popup.show = false
+    popup.frameId = ''
+    this.setState({ popup })
+  }
+
+  onFrameHover (e:any, caption: string, frameId: string, bgColor: string) {
+    if (this.popupTimeout) {
+      const { popup } = this.state
+      if (popup.frameId !== frameId) {
+        this.onFrameOut()
+      }
+    }
+    
+    const x = e.clientX
+    const y = e.clientY
+    if (this.popupTimeout) {
+      clearTimeout(this.popupTimeout)
+    }
+    this.popupTimeout = setTimeout(() => {
+      this.showPopup(caption, frameId, x, y, bgColor)
+    }, 125)
+  }
+
+  onFrameOut () {
+    if (this.popupTimeout) {
+      clearTimeout(this.popupTimeout)
+    }
+    setTimeout(() => this.hidePopup(), 125)
+  }
+
+  getFrameElement (key: number, collectionId: string, url: string, previewUrl: string, caption: string, title: string, imageType: CollectionImageType, alt: string, bgColor:string) {
+    const frameId = collectionId + '-' + key
     return (
-      <div key={key} className={cn("Album-pages-row-frame", "Frame-background-" + collectionId)}>
+      <div key={key}
+        onMouseOut={() => this.onFrameOut()}
+        className={cn("Album-pages-row-frame", "Frame-background-" + collectionId)}>
         <img src={previewUrl}
+          onMouseMove={(e) => this.onFrameHover(e, caption, frameId, bgColor)}
+          onMouseOut={() => this.onFrameOut()}
           className={cn("Image", imageType === CollectionImageType.LANDSCAPE ? "Image-landscape" : "Image-portrait")}
           alt={alt}
-          title={caption}
           onClick={() => {this.openImage(url)}} />
         <div className="Album-pages-row-frame-caption">{title}</div>
       </div>
     )
   }
 
-  renderFrames(collectionId: string, images: Array<CollectionImage>, maxImagePerRow: number, rowNumber: number) {
+  renderFrames(collectionId: string, images: Array<CollectionImage>, maxImagePerRow: number, rowNumber: number, popupColor: string) {
     let elements:Array<any> = []
 
     const startIndex = rowNumber * maxImagePerRow
@@ -46,7 +112,7 @@ class Album extends React.PureComponent<Props> {
       const image = images[i]
       const alt = collectionId + "-" + (i+1)
 
-      elements.push(this.getFrameElement(i, collectionId, image.url, image.previewUrl, image.caption, image.title, image.type, alt))
+      elements.push(this.getFrameElement(i, collectionId, image.url, image.previewUrl, image.caption, image.title, image.type, alt, popupColor))
     }
 
     return elements
@@ -59,7 +125,7 @@ class Album extends React.PureComponent<Props> {
       const image = collection.images[idx]
       const alt = collection.id + "-" + (i+1)
 
-      elements.push(this.getFrameElement(i, collection.id, image.url, image.previewUrl, image.caption, image.title, image.type, alt))
+      elements.push(this.getFrameElement(i, collection.id, image.url, image.previewUrl, image.caption, image.title, image.type, alt, collection.popupColor))
     })
 
     return elements
@@ -86,7 +152,7 @@ class Album extends React.PureComponent<Props> {
       elements.push(
         <div key={i} className="Album-pages-row">
           {
-            this.renderFrames(collection.id, collection.images, maxImagePerRow, i)
+            this.renderFrames(collection.id, collection.images, maxImagePerRow, i, collection.popupColor)
           }
         </div>
       )
@@ -116,6 +182,7 @@ class Album extends React.PureComponent<Props> {
   }
 
   render () {
+    const { popup } = this.state
     const { collection } = this.props
     return (
       <div className="Album">
@@ -124,6 +191,12 @@ class Album extends React.PureComponent<Props> {
         {
           this.renderPhotoBook(collection)
         }
+        <PopupMessage
+          show={popup.show}
+          message={popup.caption}
+          mouseX={popup.x}
+          mouseY={popup.y}
+          bgColor={popup.bgColor} />
       </div>
     )
   }
