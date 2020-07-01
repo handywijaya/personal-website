@@ -1,9 +1,11 @@
+@import '../../basic.scss';
+
 .Home {
   padding: 10px;
   line-height: 1.5;
 }
 
-@media only screen and (max-width: 634px) {
+@media only screen and (max-width: $pc-width) {
   .Home {
     margin: 0 auto;
     text-align: center;

@@ -1,3 +1,5 @@
+@import '../../basic.scss';
+
 .Album {
   margin-bottom: 20px;
   
@@ -68,7 +70,17 @@
   }
 }
 
-@media only screen and (min-width: 634px) {
+.Frame-background {
+  &-luxury-bali {
+    background: linear-gradient(#fff, #b6e5e6);
+  }
+
+  &-spring-japan-2018 {
+    background: linear-gradient(#fff, #fcd1d7);
+  }
+}
+
+@media only screen and (min-width: $pc-width) {
   .Album-pages {
     &-row-frame {
       margin-right: 5px;
@@ -83,7 +95,7 @@
   }
 }
 
-@media only screen and (max-width: 634px) {
+@media only screen and (max-width: $pc-width) {
   .Album-pages {
     &-row {
       display: inline;

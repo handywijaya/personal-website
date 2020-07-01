@@ -25,9 +25,9 @@ class Album extends React.PureComponent<Props> {
     window.open(imageUrl, '_blank')
   }
 
-  getFrameElement (key: number, url: string, previewUrl: string, caption: string, title: string, imageType: CollectionImageType, alt: string) {
+  getFrameElement (key: number, collectionId: string, url: string, previewUrl: string, caption: string, title: string, imageType: CollectionImageType, alt: string) {
     return (
-      <div key={key} className="Album-pages-row-frame">
+      <div key={key} className={cn("Album-pages-row-frame", "Frame-background-" + collectionId)}>
         <img src={previewUrl}
           className={cn("Image", imageType === CollectionImageType.LANDSCAPE ? "Image-landscape" : "Image-portrait")}
           alt={alt}
@@ -46,7 +46,7 @@ class Album extends React.PureComponent<Props> {
       const image = images[i]
       const alt = collectionId + "-" + (i+1)
 
-      elements.push(this.getFrameElement(i, image.url, image.previewUrl, image.caption, image.title, image.type, alt))
+      elements.push(this.getFrameElement(i, collectionId, image.url, image.previewUrl, image.caption, image.title, image.type, alt))
     }
 
     return elements
@@ -59,7 +59,7 @@ class Album extends React.PureComponent<Props> {
       const image = collection.images[idx]
       const alt = collection.id + "-" + (i+1)
 
-      elements.push(this.getFrameElement(i, image.url, image.previewUrl, image.caption, image.title, image.type, alt))
+      elements.push(this.getFrameElement(i, collection.id, image.url, image.previewUrl, image.caption, image.title, image.type, alt))
     })
 
     return elements

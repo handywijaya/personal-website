@@ -5,7 +5,7 @@ class Constant {
     "luxury-bali": {
       id: 'luxury-bali',
       title: 'Luxury Bali - 2019',
-      caption: 'Exploring luxuriousness of Bali!',
+      caption: 'Exploring the luxuriousness of Bali!',
       previewImageIdx: [1, 2],
       images: [
         {
