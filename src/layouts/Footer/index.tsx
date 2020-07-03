@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.scss'
 
-import Balloon from './balloon'
+import PopupMessage from '../../components/PopupMessage'
 
 import profile from './profile.jpg'
 import gmail from './gmail.svg'
@@ -25,7 +25,7 @@ class Footer extends React.Component<{}, State> {
   _openLinkedIn: () => void
   _openFb: () => void
   _openIg: () => void
-  timeoutCopyBalloon: any
+  timeoutCopyBalloon?: NodeJS.Timeout
   email: string
   emailHoverText: string
   emailCopiedText: string
@@ -42,7 +42,7 @@ class Footer extends React.Component<{}, State> {
     this._openFb = this.openFb.bind(this)
     this._openIg = this.openIg.bind(this)
 
-    this.timeoutCopyBalloon = null
+    this.timeoutCopyBalloon = undefined
 
     this.state = {
         copyBalloon: {
@@ -82,17 +82,13 @@ class Footer extends React.Component<{}, State> {
   }
 
   hoverEmail () {
-    this.toggleCopyBalloon(true, this.emailHoverText)
-    if (this.timeoutCopyBalloon) {
-        clearTimeout(this.timeoutCopyBalloon)
+    if (!this.timeoutCopyBalloon) { // toggle if copied! text is not shown
+      this.toggleCopyBalloon(true, this.emailHoverText)
     }
   }
 
   hoverEmailLeave () {
-    this.toggleCopyBalloon(false, this.emailHoverText)
-    if (this.timeoutCopyBalloon) {
-        clearTimeout(this.timeoutCopyBalloon)
-    }
+    this.toggleCopyBalloon(false)
   }
 
   openLinkedIn () {
@@ -107,10 +103,17 @@ class Footer extends React.Component<{}, State> {
     window.open('https://www.instagram.com/handywijaya_', '_blank')
   }
 
-  toggleCopyBalloon (value: boolean, text: string) {
+  toggleCopyBalloon (value: boolean, text?: string) {
     let { copyBalloon } = { ...this.state }
     copyBalloon.shown = value
-    copyBalloon.text = text
+    copyBalloon.text = text || copyBalloon.text
+
+    if (!value && this.timeoutCopyBalloon) {
+      // reset timeout so it can be hovered again
+      clearTimeout(this.timeoutCopyBalloon)
+      this.timeoutCopyBalloon = undefined
+    }
+
     this.setState({ copyBalloon })
   }
 
@@ -131,7 +134,9 @@ class Footer extends React.Component<{}, State> {
               <img className="Footer-contacts-ic-linkedIn" src={linkedIn} alt="linkedIn" onClick={this._openLinkedIn}/>
               <img className="Footer-contacts-ic-fb" src={facebook} alt="facebook" onClick={this._openFb} />
               <img className="Footer-contacts-ic-ig" src={instagram} alt="instagram" onClick={this._openIg} />
-              <Balloon shown={copyBalloon.shown} text={copyBalloon.text} />
+              <div className="Footer-popupMessage">
+                <PopupMessage show={copyBalloon.shown} message={copyBalloon.text} bgColor='white' />
+              </div>
             </div>
           </div>
         </div>

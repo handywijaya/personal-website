@@ -1,23 +1,22 @@
 import React from 'react'
-import './styles-popupMessage.scss'
+import './styles.scss'
 import cn from 'classnames'
 
 interface Props {
   show: boolean,
   message: string,
-  mouseX: number,
-  mouseY: number,
   bgColor: string
 }
 
 class PopupMessage extends React.Component<Props> {
   render () {
-    const { show, message, mouseX, mouseY, bgColor } = this.props
+    const { show, message, bgColor } = this.props
+    const bg = bgColor || 'transparent'
 
     return (
       <div
         className={cn("PopupMessage", show ? "PopupMessage-showed" : "PopupMessage-hidden")}
-        style={{top: (mouseY + 5) + 'px', left: (mouseX + 5) + 'px', background: 'linear-gradient(#fff, ' + bgColor + ')'}}>
+        style={{background: bg}}>
         { message }
       </div>
     )

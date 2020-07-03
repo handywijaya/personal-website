@@ -4,7 +4,7 @@ import cn from 'classnames'
 
 import { Collection, CollectionImage, CollectionImageType } from '../../interfaces/Collections'
 
-import PopupMessage from './popupMessage'
+import PopupMessage from './fixedPopupMessage'
 
 interface Props {
   collection: Collection
@@ -91,7 +91,6 @@ class Album extends React.Component<Props, any> {
     const frameId = collectionId + '-' + key
     return (
       <div key={key}
-        onMouseOut={() => this.onFrameOut()}
         className={cn("Album-pages-row-frame", "Frame-background-" + collectionId)}>
         <img src={previewUrl}
           onMouseMove={(e) => this.onFrameHover(e, caption, frameId, bgColor)}
