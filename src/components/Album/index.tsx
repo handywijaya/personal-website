@@ -24,7 +24,6 @@ class Album extends React.Component<Props, any> {
 
     this.state = {
       popup: {
-        frameId: '',
         show: false,
         caption: '',
         x: 0,
@@ -44,11 +43,10 @@ class Album extends React.Component<Props, any> {
     window.open(imageUrl, '_blank')
   }
 
-  showPopup (caption: string, frameId: string, x: number, y: number, bgColor: string) {
+  showPopup (caption: string, x: number, y: number, bgColor: string) {
     let { popup } = this.state
     popup.show = true
     popup.caption = caption
-    popup.frameId = frameId
     popup.x = x
     popup.y = y
     popup.bgColor = bgColor
@@ -58,25 +56,16 @@ class Album extends React.Component<Props, any> {
   hidePopup () {
     let { popup } = this.state
     popup.show = false
-    popup.frameId = ''
     this.setState({ popup })
   }
 
-  onFrameHover (e:any, caption: string, frameId: string, bgColor: string) {
-    if (this.popupTimeout) {
-      const { popup } = this.state
-      if (popup.frameId !== frameId) {
-        this.onFrameOut()
-      }
-    }
+  onFrameHover (e:any, caption: string, bgColor: string) {
+    this.onFrameOut()
     
     const x = e.clientX
     const y = e.clientY
-    if (this.popupTimeout) {
-      clearTimeout(this.popupTimeout)
-    }
     this.popupTimeout = setTimeout(() => {
-      this.showPopup(caption, frameId, x, y, bgColor)
+      this.showPopup(caption, x, y, bgColor)
     }, 125)
   }
 
@@ -84,16 +73,15 @@ class Album extends React.Component<Props, any> {
     if (this.popupTimeout) {
       clearTimeout(this.popupTimeout)
     }
-    setTimeout(() => this.hidePopup(), 125)
+    this.hidePopup()
   }
 
   getFrameElement (key: number, collectionId: string, url: string, previewUrl: string, caption: string, title: string, imageType: CollectionImageType, alt: string, bgColor:string) {
-    const frameId = collectionId + '-' + key
     return (
       <div key={key}
         className={cn("Album-pages-row-frame", "Frame-background-" + collectionId)}>
         <img src={previewUrl}
-          onMouseMove={(e) => this.onFrameHover(e, caption, frameId, bgColor)}
+          onMouseMove={(e) => this.onFrameHover(e, caption, bgColor)}
           onMouseOut={() => this.onFrameOut()}
           className={cn("Image", imageType === CollectionImageType.LANDSCAPE ? "Image-landscape" : "Image-portrait")}
           alt={alt}

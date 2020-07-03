@@ -1,6 +1,6 @@
 .FixedPopupMessage {
   position: fixed;
-  transition: 0.125s all ease;
+  transition: 0.125s opacity ease;
   user-select: none;
   pointer-events: none;
 }
