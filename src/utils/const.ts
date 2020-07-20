@@ -305,6 +305,106 @@ class Constant {
           type: CollectionImageType.LANDSCAPE
         }        
       ]
+    },
+    "explore-singapore-2018": {
+      id: 'explore-singapore-2018',
+      title: 'Explore Singapore - 2018',
+      caption: 'First time abroad with my close friends! Excited to the max!!',
+      popupColor: '#6ae0f5', // see basic.scss
+      previewImageIdx: [0, 2],
+      images: [
+        {
+          title: 'Helix Bridge',
+          caption: 'Hot summer~',
+          url: 'https://drive.google.com/uc?export=view&id=1eD9ORfIEYsKZpjFBqnGzcHhjt8ZnFAPZ',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1RrUuUjQDA4et-FdkeQP5bmDbDywQcIIX',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Random Plant at Flower Dome',
+          caption: 'Honestly I don\'t remember the name LOL',
+          url: 'https://drive.google.com/uc?export=view&id=1wNufswwhFxfW5VqAsDTo7XDiZmpOh5v_',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1vKLrIgAL17Rzh3VzhjMJn5d6LHJjDgH4',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'The Marina Bay Sands Area',
+          caption: 'When...',
+          url: 'https://drive.google.com/uc?export=view&id=1gyn9fL_SEzBJAmXpCfnEyBnaNlAkonG8',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=10LXXVaut-jOSgLNVZivjQQVz61xNxLBb',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Waterfall at Cloud Forest',
+          caption: 'Beautiful and mezmerizing!',
+          url: 'https://drive.google.com/uc?export=view&id=1GGdFaK82qTKO6rXd_9fli_kK79VEGoFl',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=13mCWYFZX_C7zWTVTUfo93klvdzBgGF8D',
+          type: CollectionImageType.PORTRAIT
+        },
+        {
+          title: 'Another Random Plant at Flower Dome',
+          caption: 'The-forgotten-name by me. But it\'s cute!',
+          url: 'https://drive.google.com/uc?export=view&id=1ONxdEOJLNTdR6De7MrmhBFj-II-pEzgZ',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1I5prcGWXZuYfba7dSyLgVTvJEg5oxlgO',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Gardens by the Bay',
+          caption: 'Our rest area after circling Flower Dome and Cloud Forest LOL',
+          url: 'https://drive.google.com/uc?export=view&id=1ifq_fihoZqqK-FJdPrzo5NT96bXtyFum',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=10xa8SQiibYFF7eYu2cMMnmk2hELKmwpI',
+          type: CollectionImageType.PORTRAIT
+        },
+        {
+          title: 'Lego Creation at Cloud Forest',
+          caption: 'Lego in camouflage!',
+          url: 'https://drive.google.com/uc?export=view&id=1-6ptUPIx4U_pl0KDedyUM054RcOj5YsJ',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1EUvhcywo2J5Mhx3oxS6EcrTP4t48iI7f',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Unversal Studios Singapore Entrance',
+          caption: 'Yuhuuuu~~~',
+          url: 'https://drive.google.com/uc?export=view&id=1O-8rrgrxXYLFKUvg1djp6gx_Jqd79EOq',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1f4qqVoHzpqepcyGOuaeL6IhMsEaAb76T',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Stone Plant at Flower Dome',
+          caption: 'I remember the name this time!! LOL',
+          url: 'https://drive.google.com/uc?export=view&id=1kEDHMA6JUmbjy75Lbo1jbQzRtEehFNgu',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1VMvSvRIkRQSvLHA60iTGbdaxiNQZobvh',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Jurassic Park, Universal Studios Singapore',
+          caption: 'Raawwwrrr!',
+          url: 'https://drive.google.com/uc?export=view&id=1lPZj83wxoZ40xYGabhXR-zxpsMGs35dP',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1YXd10j_jRtvTE6Absnsi5JBjWF7C9AWw',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Battlestar Galactica, Universal Studios Singapore',
+          caption: 'No more!! I still love my heart!!!',
+          url: 'https://drive.google.com/uc?export=view&id=1zeJ4XmM_-BoX6hj9kCm0RU7mNDR25fQq',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1GNVJX5qQLTkV8cSB5Xtqjn5UdowQNiWV',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'The Mummy, Universal Studios Singapore',
+          caption: 'Thrilling yet addictive! I\'m ready for another ride!! Hahahahahahahahah',
+          url: 'https://drive.google.com/uc?export=view&id=1CyAmk17r6ZVAe1vKIpMqVdQpxVXOKeOW',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1EzNxkEXslBEUCAdfKfEGrXiWMELyGPCD',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Spaghetti Space Chase, Universal Studios Singapore',
+          caption: 'The perfect ride to cool down the day! Let\'s save the planet againnnn :3',
+          url: 'https://drive.google.com/uc?export=view&id=1by5-TJ55bFKFnZdOj1002hTbCV2hbCF-',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1J6e1PAC4YkqP8PMyrPHUDonAH9S6cq14',
+          type: CollectionImageType.LANDSCAPE
+        }
+      ]
     }
   }
 }
