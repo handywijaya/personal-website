@@ -2,8 +2,164 @@ import { Collections, CollectionImageType } from '../interfaces/Collections'
 
 class Constant {
   public static readonly COLLECTIONS:Collections = {
-    "luxury-bali": {
-      id: 'luxury-bali',
+    "refreshing-bali-2020": {
+      id: 'refreshing-bali-2020',
+      title: 'Refreshing Bali - 2020',
+      caption: 'A moment to enjoy Bali and Nusa Lembongan. Right before the pandemic!',
+      popupColor: '#66ffca', // see basic.scss
+      previewImageIdx: [0, 1],
+      images: [
+        {
+          title: 'Blue Lagoon - Nusa Lembongan',
+          caption: 'I could spend my entire day!',
+          url: 'https://drive.google.com/uc?export=view&id=1KTNvvN6ywu4VWlBRARfdtLnFpW_l4I01',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1rNGB97NLxSfCNQAXqZeCCA_ezi1hNVEm',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Mahagiri Beach - The Full Team!',
+          caption: 'You will never bored!',
+          url: 'https://drive.google.com/uc?export=view&id=12fAWKdd18r2DZviLH7X109Y7rXd2sTYW',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1q-dWb1Tjq9SmRtAIEIoCNtkFxP4wFR_H',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Blue Lagoon - Nusa Lembongan',
+          caption: 'Please take me back',
+          url: 'https://drive.google.com/uc?export=view&id=1s3UsmgxIixLmmCvhq8vUNCGKUJhFHQGe',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1VGXqoaI8v8e9vzrc5k4WRp9jgr6sWOqO',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Devil\'s Tears - Nusa Lembongan',
+          caption: 'Crazy scenery with deadly waves! Be careful going here!',
+          url: 'https://drive.google.com/uc?export=view&id=1BO-h4qFAlcFPzqVLg1SloCg6V99D7BZZ',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1wYiu_71m4oJGw1LRh2gP8a8ZmXyjt9uz',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Mahagiri Beach - Nusa Lembongan',
+          caption: 'It is not it until you see the official sign LOL',
+          url: 'https://drive.google.com/uc?export=view&id=1IKKY4u6AVXEw2RnsPG1s36SicLQZ9jg3',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1dwAT__Hg7xdI43MnYYKL0uWI7jRjYsnW',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Devil\'s Tears - Nusa Lembongan',
+          caption: 'A rainbow from a closer look <3',
+          url: 'https://drive.google.com/uc?export=view&id=1lj37UkM5HQ1iWZg-2Safp_9SN8xHNlNN',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1QFf6L-TLWDdFXyScxc5DMoI_nji0q9c3',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Blue Lagoon - Nusa Lembongan',
+          caption: 'Mother nature with its beauty',
+          url: 'https://drive.google.com/uc?export=view&id=1kZZvgCrcupWwwX8ffeSu-j0PP9Oui6l3',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1477lEVMGjuJiW4qS3SPUdCxldXPxAa-P',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Mahagiri Beach - The Full Team',
+          caption: 'Here is our toss to enjoy the worldwide!',
+          url: 'https://drive.google.com/uc?export=view&id=1zUWVWI4ppIy3etU25JxfflZD_IZvASAd',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1eTaMgOkmIL4Hm5YYC3i1r7pYeO2h56w2',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Hidden Hills Wanagiri',
+          caption: 'A beautiful scenery from almost-the-top! There are some unique photo spots here~',
+          url: 'https://drive.google.com/uc?export=view&id=1YDS1DbROQkasa33YeTLvy2CU7qca5qn3',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1L7eaTpfb-5cmnsbjZV1kiCJ4Tq9yicjl',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Tanah Lot',
+          caption: 'Lucky to have a chance to see their ritual',
+          url: 'https://drive.google.com/uc?export=view&id=1IQhLl-1iMLn7BcS47kci7idGoEKyzqf3',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1CJ1jnxOlk7i1fdvGlZsp1l91swtg7pWI',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'A little selfie - Mahagiri Beach',
+          caption: 'Never hurts :p',
+          url: 'https://drive.google.com/uc?export=view&id=1BUmibtNBxCSL2Vlq44viuoka3-K4nOXq',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=15JMAxjc4AelAfFumt1URzTYXH12zeKZG',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Sunset Seeing - Kuta Beach',
+          caption: 'Set to reset the day',
+          url: 'https://drive.google.com/uc?export=view&id=1cg1OYFjopILDIryvcCLw82xd3Co5cBQF',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1EgSjEIKkfuWxlsLm4khq5baHgX9t1YKW',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'MadPops - Seminyak',
+          caption: 'Another visit :p',
+          url: 'https://drive.google.com/uc?export=view&id=1gsNl7Fc09SQarBnykXHCJLLjy_ifPa4n',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=12HgDbrkZtzxtTTTosdPSeEPu-h_IBZF_',
+          type: CollectionImageType.PORTRAIT
+        },
+        {
+          title: 'After Sunset - Seminyak Beach',
+          caption: 'I am still here',
+          url: 'https://drive.google.com/uc?export=view&id=1oGtqf2dISFPC5op0cabOBzGZ6MsFlwOt',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1f-37EzKJhgJSIqduLTP1uN5_gLjO8bpN',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Sunset seeing - Kuta Beach',
+          caption: 'Peaceful and calming',
+          url: 'https://drive.google.com/uc?export=view&id=1CwjoKvHfSEs6ElEb3t1aoL5qCO0RZwu4',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1QHPcr3-QP6ADFBmThNLTwdUIPZm4jqob',
+          type: CollectionImageType.PORTRAIT
+        },
+        {
+          title: 'Warung Ayam Ibu Oki - Nusa Dua',
+          caption: 'I believe they made this dish with love <3',
+          url: 'https://drive.google.com/uc?export=view&id=1Ce7TRqe1w9NLURrvHcIxbSN8WTMlttNn',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=19FQjS_PdE-i00wkrEON-mVul5dsf8qFS',
+          type: CollectionImageType.PORTRAIT
+        },
+        {
+          title: 'RivaReno - Seminyak',
+          caption: 'Once a day is never enough - said someone on this photo :p',
+          url: 'https://drive.google.com/uc?export=view&id=1bSRzPB_0qYP9sGQz0KO0fkyy6I9AaJTD',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1i-zZzJtDo5CMSiyVi-dtAJPNVhU-1gSX',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Nasi Bali Made Weti - Sanur',
+          caption: 'A must visit place!!! (with 3 exclamation marks)!!!',
+          url: 'https://drive.google.com/uc?export=view&id=1U6MD_pcV7YGUImqiQjtdftUQtZJaTX7o',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1BqRYj-IFISi2HWQuyltUJAjDIBMRFsUF',
+          type: CollectionImageType.PORTRAIT
+        },
+        {
+          title: 'Lunch - Nook',
+          caption: 'Foodie with refreshing fields! Best visited at sunny afternoon',
+          url: 'https://drive.google.com/uc?export=view&id=1_ANrafsFjIPpazgnUpmN9C4y5c_jn_YZ',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1KyYpEc0g_yzV92_0K2eQcJQwfBfjHRZd',
+          type: CollectionImageType.PORTRAIT
+        },
+        {
+          title: 'Breakfast - Fat Mermaid',
+          caption: 'Droolingggg',
+          url: 'https://drive.google.com/uc?export=view&id=1Jj8zuqTx1_O8vdzfIe2HD7VdVPaLhaR2',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1hanHFSoEvk-JfvtkytNmhckNm901XH3E',
+          type: CollectionImageType.LANDSCAPE
+        },
+        {
+          title: 'Bebek Bengil - Ubud',
+          caption: 'Tasty! The best duck I have ever eat!',
+          url: 'https://drive.google.com/uc?export=view&id=1BEN8IURbIQrgxyIqgPCX1NLxzNgyNgqd',
+          previewUrl: 'https://drive.google.com/uc?export=view&id=1P91Tn64ae6IB7l0agdLXAe0en-oMzHXZ',
+          type: CollectionImageType.PORTRAIT
+        }
+      ]
+    },
+    "luxury-bali-2019": {
+      id: 'luxury-bali-2019',
       title: 'Luxury Bali - 2019',
       caption: 'Exploring the luxuriousness of Bali!',
       popupColor: '#dcf3f3', // see basic.scss

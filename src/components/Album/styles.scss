@@ -71,16 +71,20 @@
 }
 
 .Frame-background {
-  &-luxury-bali {
-    background: linear-gradient(#fff, $blue-lux);
+  &-refreshing-bali-2020 {
+    background: linear-gradient(#fff, $refreshing-bali-2020);
+  }
+
+  &-luxury-bali-2019 {
+    background: linear-gradient(#fff, $luxury-bali-2019);
   }
 
   &-spring-japan-2018 {
-    background: linear-gradient(#fff, $pink-sakura);
+    background: linear-gradient(#fff, $spring-japan-2018);
   }
 
   &-explore-singapore-2018 {
-    background: linear-gradient(#fff, $blue-sg);
+    background: linear-gradient(#fff, $explore-singapore-2018);
   }
 }
 
